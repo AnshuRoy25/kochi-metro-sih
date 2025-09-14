@@ -7,3 +7,4 @@ seaborn
 pytest
 httpx
 fastapi[all]
+pytest-asyncio
