@@ -1,10 +1,13 @@
 // src/components/RankedTrainList.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './RankedTrainList.css';
 import { fetchRankedTrains } from '../api/rankedTrainsApi';
 import TrainExplanation from './TrainExplanation';
 
 const RankedTrainList = () => {
+    // Add ref for scrolling
+    const rankedTrainListRef = useRef(null);
+    
     // State for ranked trains functionality
     const [rankedTrains, setRankedTrains] = useState([]);
     const [rankedCurrentPage, setRankedCurrentPage] = useState(1);
@@ -17,6 +20,16 @@ const RankedTrainList = () => {
     
     // State for explanation feature
     const [expandedTrainId, setExpandedTrainId] = useState(null);
+
+    // Scroll to top of ranked train list section
+    const scrollToRankedTrainList = () => {
+        if (rankedTrainListRef.current) {
+            rankedTrainListRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
 
     // Pagination logic for ranked trains
     const rankedTotalPages = Math.ceil(rankedTrains.length / rankedItemsPerPage);
@@ -75,11 +88,13 @@ const RankedTrainList = () => {
         setExpandedTrainId(null);
     };
 
-    // Ranked pagination handlers
+    // Updated ranked pagination handlers with scroll functionality
     const goToRankedPreviousPage = () => {
         if (rankedCurrentPage > 1) {
             setRankedCurrentPage(rankedCurrentPage - 1);
             setExpandedTrainId(null); // Close explanations when changing pages
+            // Scroll to top of ranked train list after state update
+            setTimeout(() => scrollToRankedTrainList(), 100);
         }
     };
 
@@ -87,6 +102,8 @@ const RankedTrainList = () => {
         if (rankedCurrentPage < rankedTotalPages) {
             setRankedCurrentPage(rankedCurrentPage + 1);
             setExpandedTrainId(null); // Close explanations when changing pages
+            // Scroll to top of ranked train list after state update
+            setTimeout(() => scrollToRankedTrainList(), 100);
         }
     };
 
@@ -94,6 +111,8 @@ const RankedTrainList = () => {
         setRankedItemsPerPage(parseInt(e.target.value));
         setRankedCurrentPage(1);
         setExpandedTrainId(null); // Close explanations when changing page size
+        // Scroll to top of ranked train list after state update
+        setTimeout(() => scrollToRankedTrainList(), 100);
     };
 
     const handleTopKChange = (e) => {
@@ -128,7 +147,7 @@ const RankedTrainList = () => {
     };
 
     return (
-        <section className="ranked-trains-section">
+        <section className="ranked-trains-section" ref={rankedTrainListRef}>
             {/* Dark background section for controls */}
             <div className="ranked-trains-controls">
                 <h2>AI-Ranked Trains</h2>

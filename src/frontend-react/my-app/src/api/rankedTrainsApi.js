@@ -59,32 +59,3 @@ export const fetchRankedTrains = async (topK = 'all') => {
         };
     }
 };
-
-export const fetchTrainExplanation = async (trainId) => {
-    try {
-        const response = await fetch(`${API_BASE_URL}/explanation/${trainId}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        return {
-            success: true,
-            data: data,
-            message: 'Train explanation fetched successfully'
-        };
-    } catch (error) {
-        console.error('Error fetching train explanation:', error);
-        return {
-            success: false,
-            data: null,
-            message: error.message || 'Failed to fetch train explanation'
-        };
-    }
-};

@@ -1,7 +1,7 @@
 // src/components/TrainExplanation.jsx
 import React, { useState, useEffect } from 'react';
 import './TrainExplanation.css';
-import { fetchTrainExplanation } from '../api/rankedTrainsApi';
+import { fetchTrainExplanation } from '../api/explanationApi';
 
 const TrainExplanation = ({ trainId, isVisible, onClose }) => {
     const [explanation, setExplanation] = useState(null);

@@ -1,9 +1,12 @@
 // src/components/TrainList.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './TrainList.css';
 import { fetchAllTrains } from '../api/trainListApi';
 
 const TrainList = () => {
+    // Add ref for scrolling
+    const trainListRef = useRef(null);
+    
     // State for filtering and pagination
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(25);
@@ -37,6 +40,16 @@ const TrainList = () => {
 
         loadTrains();
     }, []);
+
+    // Scroll to top of train list section
+    const scrollToTrainList = () => {
+        if (trainListRef.current) {
+            trainListRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
 
     // Filter trains based on current filters
     const getFilteredTrains = () => {
@@ -102,22 +115,28 @@ const TrainList = () => {
         setCurrentPage(1);
     };
 
-    // Pagination handlers
+    // Updated pagination handlers with scroll functionality
     const goToPreviousPage = () => {
         if (currentPage > 1) {
             setCurrentPage(currentPage - 1);
+            // Scroll to top of train list after state update
+            setTimeout(() => scrollToTrainList(), 100);
         }
     };
 
     const goToNextPage = () => {
         if (currentPage < totalPages) {
             setCurrentPage(currentPage + 1);
+            // Scroll to top of train list after state update
+            setTimeout(() => scrollToTrainList(), 100);
         }
     };
 
     const handleItemsPerPageChange = (e) => {
         setItemsPerPage(parseInt(e.target.value));
         setCurrentPage(1);
+        // Scroll to top of train list after state update
+        setTimeout(() => scrollToTrainList(), 100);
     };
 
     // Badge helper functions
@@ -138,7 +157,7 @@ const TrainList = () => {
     // Loading state
     if (loading) {
         return (
-            <section className="train-list-section">
+            <section className="train-list-section" ref={trainListRef}>
                 <div className="section-header">
                     <h2><strong>Train List</strong></h2>
                     <div className="results-info">
@@ -158,7 +177,7 @@ const TrainList = () => {
     // Error state
     if (error) {
         return (
-            <section className="train-list-section">
+            <section className="train-list-section" ref={trainListRef}>
                 <div className="section-header">
                     <h2><strong>Train List</strong></h2>
                     <div className="results-info">
@@ -173,7 +192,7 @@ const TrainList = () => {
     }
 
     return (
-        <section className="train-list-section">
+        <section className="train-list-section" ref={trainListRef}>
             {/* Filters Section */}
             <div className="filters-section">
                 <div className="filter-bar">
