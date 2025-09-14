@@ -8,19 +8,23 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# Configure CORS to allow frontend access during development
+# Updated CORS configuration - more permissive for development
 origins = [
     "http://localhost",
-    "http://localhost:3000", # Common for React
-    "http://localhost:8080", # Common for Vue
-    "http://127.0.0.1:5500", # Common for VS Code Live Server
+    "http://localhost:3000",  # React default
+    "http://localhost:5173",  # Vite default
+    "http://localhost:8080",  # Vue default
+    "http://127.0.0.1:3000",  # Alternative localhost
+    "http://127.0.0.1:5173",  # Alternative localhost for Vite
+    "http://127.0.0.1:5500",  # VS Code Live Server
+    # Add any other origins your frontend might use
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],  # Explicitly include OPTIONS
     allow_headers=["*"],
 )
 
@@ -28,7 +32,6 @@ app.add_middleware(
 app.include_router(trains.router)
 app.include_router(ranking.router)
 app.include_router(explanation.router)
-
 
 @app.get("/", tags=["Root"])
 async def read_root():

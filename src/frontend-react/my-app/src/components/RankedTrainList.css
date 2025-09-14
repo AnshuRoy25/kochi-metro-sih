@@ -159,14 +159,45 @@
     font-family: 'Inter', sans-serif;
 }
 
-.ranked-trains-section .trains-table tbody tr {
+/* Clickable train rows */
+.ranked-trains-section .trains-table .train-row {
     position: relative;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.ranked-trains-section .trains-table tbody tr:hover {
-    background: rgba(59, 130, 246, 0.04);
+.ranked-trains-section .trains-table .train-row:hover {
+    background: rgba(59, 130, 246, 0.08);
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.ranked-trains-section .trains-table .train-row.expanded {
+    background: rgba(59, 130, 246, 0.08);
+    border-left: 3px solid #3b82f6;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+.ranked-trains-section .trains-table .train-row::after {
+    content: '⋯';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 16px;
+    color: #64748b;
+}
+
+.ranked-trains-section .trains-table .train-row:hover::after {
+    opacity: 0.6;
+}
+
+.ranked-trains-section .trains-table .train-row.expanded::after {
+    content: '−';
+    opacity: 1;
+    font-weight: bold;
 }
 
 .ranked-trains-section .trains-table tbody tr:last-child td {
@@ -193,20 +224,7 @@
 }
 
 /* Score badge styling */
-.score-badge {
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-    color: #475569;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    border: 1px solid #cbd5e1;
-    font-family: 'Inter', sans-serif;
-    display: inline-flex;
-    align-items: center;
-    min-width: 50px;
-    justify-content: center;
-}
+
 
 /* Rank badge styling */
 .rank-badge {
@@ -401,6 +419,10 @@
     font-weight: 500;
     font-style: italic;
     margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 /* Ranking Placeholder */
@@ -487,6 +509,21 @@
     
     .ranking-placeholder p {
         font-size: 1rem;
+    }
+    
+    /* Enable horizontal scrolling for mobile */
+    .ranked-trains-section .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+    
+    .ranked-trains-section .trains-table {
+        min-width: 700px; /* Force table to be wider than container */
+    }
+    
+    /* Hide hover indicator on mobile */
+    .ranked-trains-section .trains-table .train-row::after {
+        display: none;
     }
     
     /* Mobile pagination for ranked section */

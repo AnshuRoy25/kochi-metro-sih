@@ -5,12 +5,15 @@ const API_BASE_URL = 'http://localhost:8000'; // Adjust this to match your backe
 export const fetchRankedTrains = async (topK = 'all') => {
     try {
         // Prepare query parameters
-        const params = new URLSearchParams();
-        if (topK !== 'all') {
-            params.append('limit', topK);
-        }
+        let url = `${API_BASE_URL}/rank`;
         
-        const url = `${API_BASE_URL}/rank${params.toString() ? `?${params.toString()}` : ''}`;
+        // Only add limit parameter if topK is not 'all'
+        if (topK !== 'all') {
+            const limitValue = parseInt(topK);
+            if (!isNaN(limitValue) && limitValue > 0) {
+                url += `?limit=${limitValue}`;
+            }
+        }
         
         const response = await fetch(url, {
             method: 'GET',
@@ -29,10 +32,13 @@ export const fetchRankedTrains = async (topK = 'all') => {
         const transformedData = data.map((train, index) => ({
             rank: index + 1,
             train_id: train.train_id,
-            train_name: train.train_name || `Train ${train.train_id}`, // Fallback if name not provided
+            train_name: train.train_name, // This should now come from backend
             score: train.score,
-            status: train.status || 'Ready', // Default status
-            priority_level: train.priority_level || 'Medium' // Default priority
+            status: train.status, // This should now come from backend
+            priority_level: train.priority_level, // This should now come from backend
+            depot: train.depot,
+            mileage: train.mileage,
+            last_maintenance_time: train.last_maintenance_time
         }));
 
         return {

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './RankedTrainList.css';
 import { fetchRankedTrains } from '../api/rankedTrainsApi';
+import TrainExplanation from './TrainExplanation';
 
 const RankedTrainList = () => {
     // State for ranked trains functionality
@@ -13,6 +14,9 @@ const RankedTrainList = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [topK, setTopK] = useState('all');
+    
+    // State for explanation feature
+    const [expandedTrainId, setExpandedTrainId] = useState(null);
 
     // Pagination logic for ranked trains
     const rankedTotalPages = Math.ceil(rankedTrains.length / rankedItemsPerPage);
@@ -27,11 +31,17 @@ const RankedTrainList = () => {
         setIsRanking(true);
         setSuccessMessage('');
         setErrorMessage('');
+        setExpandedTrainId(null); // Close any open explanations
 
         try {
+            console.log('Ranking trains with topK:', topK); // Debug log
+            
             const response = await fetchRankedTrains(topK);
             
+            console.log('API Response:', response); // Debug log
+            
             if (response.success) {
+                console.log('Ranked trains data:', response.data); // Debug log
                 setRankedTrains(response.data);
                 setRankedCurrentPage(1);
                 setShowRankedResults(true);
@@ -52,26 +62,44 @@ const RankedTrainList = () => {
         }
     };
 
+    // Explanation handlers
+    const handleTrainRowClick = (trainId) => {
+        if (expandedTrainId === trainId) {
+            setExpandedTrainId(null); // Close if already open
+        } else {
+            setExpandedTrainId(trainId); // Open explanation
+        }
+    };
+
+    const closeExplanation = () => {
+        setExpandedTrainId(null);
+    };
+
     // Ranked pagination handlers
     const goToRankedPreviousPage = () => {
         if (rankedCurrentPage > 1) {
             setRankedCurrentPage(rankedCurrentPage - 1);
+            setExpandedTrainId(null); // Close explanations when changing pages
         }
     };
 
     const goToRankedNextPage = () => {
         if (rankedCurrentPage < rankedTotalPages) {
             setRankedCurrentPage(rankedCurrentPage + 1);
+            setExpandedTrainId(null); // Close explanations when changing pages
         }
     };
 
     const handleRankedItemsPerPageChange = (e) => {
         setRankedItemsPerPage(parseInt(e.target.value));
         setRankedCurrentPage(1);
+        setExpandedTrainId(null); // Close explanations when changing page size
     };
 
     const handleTopKChange = (e) => {
+        console.log('TopK changed to:', e.target.value); // Debug log
         setTopK(e.target.value);
+        setExpandedTrainId(null); // Close explanations when changing filter
     };
 
     // Badge helper functions
@@ -88,11 +116,15 @@ const RankedTrainList = () => {
     };
 
     const getStatusBadge = (status) => {
-        return <span className={`status-badge status-${status.toLowerCase()}`}>{status}</span>;
+        // Handle missing status
+        const statusValue = status || 'Unknown';
+        return <span className={`status-badge status-${statusValue.toLowerCase()}`}>{statusValue}</span>;
     };
 
     const getPriorityBadge = (priority) => {
-        return <span className={`priority-badge priority-${priority.toLowerCase()}`}>{priority}</span>;
+        // Handle missing priority
+        const priorityValue = priority || 'Unknown';
+        return <span className={`priority-badge priority-${priorityValue.toLowerCase()}`}>{priorityValue}</span>;
     };
 
     return (
@@ -156,6 +188,11 @@ const RankedTrainList = () => {
                                     : `Showing ${rankedStartIndex + 1}-${Math.min(rankedEndIndex, rankedTrains.length)} of ${rankedTrains.length} ranked trains`
                                 }
                             </span>
+                            {rankedTrains.length > 0 && (
+                                <span style={{ fontStyle: 'italic', color: '#64748b', marginLeft: '16px' }}>
+                                    Click any row for detailed analysis
+                                </span>
+                            )}
                         </div>
 
                         <div className="table-container">
@@ -178,16 +215,32 @@ const RankedTrainList = () => {
                                             </td>
                                         </tr>
                                     ) : (
-                                        currentPageRanked.map(train => (
-                                            <tr key={train.train_id}>
-                                                <td>{getRankBadge(train.rank)}</td>
-                                                <td><strong>{train.train_id}</strong></td>
-                                                <td>{train.train_name}</td>
-                                                <td>{getScoreBadge(train.score)}</td>
-                                                <td>{getStatusBadge(train.status)}</td>
-                                                <td>{getPriorityBadge(train.priority_level)}</td>
-                                            </tr>
-                                        ))
+                                        currentPageRanked.map(train => {
+                                            console.log('Rendering train:', train); // Debug log
+                                            return (
+                                                <React.Fragment key={train.train_id}>
+                                                    <tr 
+                                                        className={`train-row ${expandedTrainId === train.train_id ? 'expanded' : ''}`}
+                                                        onClick={() => handleTrainRowClick(train.train_id)}
+                                                        style={{ cursor: 'pointer' }}
+                                                    >
+                                                        <td>{getRankBadge(train.rank)}</td>
+                                                        <td><strong>{train.train_id}</strong></td>
+                                                        <td>{train.train_name || `Train ${train.train_id}`}</td>
+                                                        <td>{getScoreBadge(train.score)}</td>
+                                                        <td>{getStatusBadge(train.status)}</td>
+                                                        <td>{getPriorityBadge(train.priority_level)}</td>
+                                                    </tr>
+                                                    
+                                                    {/* Explanation row */}
+                                                    <TrainExplanation 
+                                                        trainId={train.train_id}
+                                                        isVisible={expandedTrainId === train.train_id}
+                                                        onClose={closeExplanation}
+                                                    />
+                                                </React.Fragment>
+                                            );
+                                        })
                                     )}
                                 </tbody>
                             </table>
