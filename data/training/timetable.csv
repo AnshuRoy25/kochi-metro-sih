@@ -1,0 +1,17 @@
+Type,Direction,Day,Start Time,End Time,Interval
+Weekday,Aluva → Maharaja's,First Train,06:00 AM,–,
+Weekday,Maharaja's → Aluva,First Train,06:00 AM,–,
+Weekday,Aluva → Maharaja's,Last Train,10:00 PM,–,
+Weekday,Maharaja's → Aluva,Last Train,10:00 PM,–,
+Weekday,All directions,06:00 AM,07:30 AM,17 Mins 30 Sec
+Weekday,All directions,07:30 AM,08:30 AM,11 Mins 40 Sec
+Weekday,All directions,08:30 AM,08:00 PM,8 Mins 45 Sec
+Weekday,All directions,08:00 PM,10:00 PM,15 Mins
+Sunday,Aluva → Maharaja's,First Train,08:00 AM,–,
+Sunday,Maharaja's → Aluva,First Train,08:00 AM,–,
+Sunday,Aluva → Maharaja's,Last Train,10:00 PM,–,
+Sunday,Maharaja's → Aluva,Last Train,10:00 PM,–,
+Sunday,All directions,08:00 AM,09:30 AM,17 Mins 30 Sec
+Sunday,All directions,09:30 AM,10:30 AM,11 Mins 40 Sec
+Sunday,All directions,10:30 AM,08:00 PM,8 Mins 45 Sec
+Sunday,All directions,08:00 PM,10:00 PM,15 Mins

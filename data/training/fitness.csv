@@ -1,76 +1,76 @@
-train_id,dept,status,valid_until,issued_on,inspector_name,notes,priority_level
-T01,rolling_stock,valid,2025-08-12,2025-07-20,Ravi Kumar,All checks cleared,low
-T01,signalling,expiring,2025-08-12,2025-06-25,Anita Sharma,Battery backup nearing limit,medium
-T01,telecom,invalid,2025-08-12,2025-05-15,Manoj Singh,Radio communication fault,high
-T02,rolling_stock,valid,2025-08-12,2025-08-10,Sneha Nair,Good condition,low
-T02,signalling,valid,2025-08-12,2025-07-30,Rajesh Gupta,Signal systems operational,low
-T02,telecom,expiring,2025-08-12,2025-06-18,Priya Patel,Antenna alignment required,medium
-T03,rolling_stock,invalid,2025-08-12,2025-05-28,Vikram Singh,Brake system malfunction,high
-T03,signalling,valid,2025-08-12,2025-08-15,Kavita Joshi,All systems normal,low
-T03,telecom,valid,2025-08-12,2025-08-02,Deepak Verma,Communication clear,low
-T04,rolling_stock,valid,2025-08-12,2025-08-05,Sunita Rao,Routine maintenance completed,low
-T04,signalling,expiring,2025-08-12,2025-07-01,Arun Mehta,Signal lamp replacement due,medium
-T04,telecom,invalid,2025-08-12,2025-05-22,Nisha Agarwal,Microphone not working,high
-T05,rolling_stock,expiring,2025-08-12,2025-06-20,Ramesh Chandra,Engine cooling system check,medium
-T05,signalling,valid,2025-08-12,2025-08-25,Meera Saxena,Track circuit functioning,low
-T05,telecom,valid,2025-08-12,2025-07-25,Suresh Pandey,Radio frequency optimized,low
-T06,rolling_stock,valid,2025-08-12,2025-08-12,Amit Tiwari,No issues found,low
-T06,signalling,invalid,2025-08-12,2025-05-30,Pooja Mishra,Signal relay damaged,high
-T06,telecom,expiring,2025-08-12,2025-06-28,Gopal Krishna,Cable insulation worn,medium
-T07,rolling_stock,invalid,2025-08-12,2025-05-18,Vinod Kumar,Wheel alignment problem,high
-T07,signalling,valid,2025-08-12,2025-07-28,Shalini Gupta,Control systems updated,low
-T07,telecom,valid,2025-08-12,2025-08-18,Raman Sharma,All frequencies clear,low
-T08,rolling_stock,valid,2025-08-12,2025-07-15,Kiran Jain,Maintenance up to date,low
-T08,signalling,expiring,2025-08-12,2025-07-05,Ashok Yadav,Timer circuits aging,medium
-T08,telecom,invalid,2025-08-12,2025-06-02,Rekha Sinha,Speaker system failure,high
-T09,rolling_stock,expiring,2025-08-12,2025-06-15,Dinesh Prasad,Hydraulic pressure low,medium
-T09,signalling,valid,2025-08-12,2025-08-28,Usha Bansal,Signal clarity excellent,low
-T09,telecom,valid,2025-08-12,2025-07-22,Harish Chander,Data transmission stable,low
-T10,rolling_stock,valid,2025-08-12,2025-08-08,Satish Kohli,All components functional,low
-T10,signalling,invalid,2025-08-12,2025-06-10,Madhuri Bhatt,Junction box corroded,high
-T10,telecom,expiring,2025-08-12,2025-07-08,Naveen Arora,Backup power weak,medium
-T11,rolling_stock,invalid,2025-08-12,2025-05-25,Shyam Sunder,Coupling mechanism stuck,high
-T11,signalling,valid,2025-08-12,2025-08-01,Geeta Malhotra,LED indicators working,low
-T11,telecom,valid,2025-08-12,2025-08-20,Yashpal Singh,Voice clarity good,low
-T12,rolling_stock,valid,2025-08-12,2025-07-12,Lalita Devi,Routine inspection passed,low
-T12,signalling,expiring,2025-08-12,2025-06-30,Mohan Lal,Circuit breaker aging,medium
-T12,telecom,invalid,2025-08-12,2025-05-20,Rashmi Kapoor,Handset not functional,high
-T13,rolling_stock,expiring,2025-08-12,2025-06-25,Bharat Singh,Filter replacement needed,medium
-T13,signalling,valid,2025-08-12,2025-08-12,Sunita Sharma,Safety systems active,low
-T13,telecom,valid,2025-08-12,2025-07-18,Pankaj Gupta,Network connectivity strong,low
-T14,rolling_stock,valid,2025-08-12,2025-09-01,Jagdish Prasad,Excellent working condition,low
-T14,signalling,invalid,2025-08-12,2025-06-08,Anita Rani,Control panel malfunction,high
-T14,telecom,expiring,2025-08-12,2025-07-02,Sunil Agarwal,Interference detected,medium
-T15,rolling_stock,invalid,2025-08-12,2025-05-28,Vijay Kumar,Suspension system fault,high
-T15,signalling,valid,2025-08-12,2025-07-20,Manju Devi,Signal strength optimal,low
-T15,telecom,valid,2025-08-12,2025-08-25,Rajinder Kaur,Communication protocols updated,low
-T16,rolling_stock,valid,2025-08-12,2025-07-08,Prakash Chandra,All safety checks passed,low
-T16,signalling,expiring,2025-08-12,2025-06-22,Nirmala Singh,Warning light dimming,medium
-T16,telecom,invalid,2025-08-12,2025-05-15,Rohit Sharma,Transmission line damaged,high
-T17,rolling_stock,expiring,2025-08-12,2025-06-20,Krishna Murthy,Lubrication system check,medium
-T17,signalling,valid,2025-08-12,2025-08-08,Sarita Jain,Track monitoring active,low
-T17,telecom,valid,2025-08-12,2025-07-28,Ajay Tiwari,Digital systems upgraded,low
-T18,rolling_stock,valid,2025-08-12,2025-08-15,Ramnika Kaur,Components in good shape,low
-T18,signalling,invalid,2025-08-12,2025-06-12,Brijesh Kumar,Signal timing error,high
-T18,telecom,expiring,2025-08-12,2025-07-05,Neelam Yadav,Cable wear observed,medium
-T19,rolling_stock,invalid,2025-08-12,2025-05-22,Ashish Goel,Door mechanism jammed,high
-T19,signalling,valid,2025-08-12,2025-07-25,Kamala Devi,Control room systems OK,low
-T19,telecom,valid,2025-08-12,2025-08-10,Sudhir Bansal,Audio quality excellent,low
-T20,rolling_stock,valid,2025-08-12,2025-08-02,Mahesh Agarwal,Preventive maintenance done,low
-T20,signalling,expiring,2025-08-12,2025-06-28,Renu Sharma,Power supply fluctuation,medium
-T20,telecom,invalid,2025-08-12,2025-05-25,Tarun Gupta,Emergency communication down,high
-T21,rolling_stock,expiring,2025-08-12,2025-06-18,Santosh Kumar,Electrical system aging,medium
-T21,signalling,valid,2025-08-12,2025-08-18,Pushpa Rani,Automated systems functional,low
-T21,telecom,valid,2025-08-12,2025-07-15,Vinay Prakash,Signal processing normal,low
-T22,rolling_stock,valid,2025-08-12,2025-08-22,Sanjay Mishra,Operational efficiency high,low
-T22,signalling,invalid,2025-08-12,2025-06-15,Bharti Singh,Junction failure detected,high
-T22,telecom,expiring,2025-08-12,2025-07-08,Mukesh Yadav,Frequency drift noticed,medium
-T23,rolling_stock,invalid,2025-08-12,2025-05-30,Arvind Sharma,Compressor malfunction,high
-T23,signalling,valid,2025-08-12,2025-07-18,Sudha Gupta,Block system operational,low
-T23,telecom,valid,2025-08-12,2025-08-28,Nitin Agarwal,Voice transmission clear,low
-T24,rolling_stock,valid,2025-08-12,2025-07-12,Ravi Shankar,All parameters normal,low
-T24,signalling,expiring,2025-08-12,2025-06-25,Meena Kumari,Relay contact oxidation,medium
-T24,telecom,invalid,2025-08-12,2025-05-20,Deepak Kumar,Antenna system failure,high
-T25,rolling_stock,expiring,2025-08-12,2025-07-01,Harikesh Prasad,Brake lining replacement due,medium
-T25,signalling,valid,2025-08-12,2025-09-02,Kaushalya Devi,Safety interlocks working,low
-T25,telecom,valid,2025-08-12,2025-07-22,Yogesh Singh,Data link stable,low
+train_id,dept,status,valid_until,issued_on,inspector_name,notes,priority_level,days_left
+T01,rolling_stock,1,2025-11-29,2025-07-20,Ravi Kumar,All checks cleared,low,78
+T01,signalling,0,2025-10-25,2025-06-25,Anita Sharma,Battery backup nearing limit,medium,43
+T01,telecom,0,2025-06-28,2025-05-15,Manoj Singh,Radio communication fault,high,-76
+T02,rolling_stock,1,2025-12-24,2025-08-10,Sneha Nair,Good condition,low,103
+T02,signalling,1,2025-11-08,2025-07-30,Rajesh Gupta,Signal systems operational,low,57
+T02,telecom,0,2025-08-07,2025-06-18,Priya Patel,Antenna alignment required,medium,-36
+T03,rolling_stock,0,2025-10-07,2025-05-28,Vikram Singh,Brake system malfunction,high,25
+T03,signalling,1,2026-01-13,2025-08-15,Kavita Joshi,All systems normal,low,123
+T03,telecom,1,2025-11-14,2025-08-02,Deepak Verma,Communication clear,low,63
+T04,rolling_stock,1,2025-11-30,2025-08-05,Sunita Rao,Routine maintenance completed,low,79
+T04,signalling,0,2025-11-24,2025-07-01,Arun Mehta,Signal lamp replacement due,medium,73
+T04,telecom,0,2025-09-28,2025-05-22,Nisha Agarwal,Microphone not working,high,16
+T05,rolling_stock,0,2025-10-31,2025-06-20,Ramesh Chandra,Engine cooling system check,medium,49
+T05,signalling,1,2026-02-01,2025-08-25,Meera Saxena,Track circuit functioning,low,142
+T05,telecom,1,2026-01-20,2025-07-25,Suresh Pandey,Radio frequency optimized,low,130
+T06,rolling_stock,1,2025-11-02,2025-08-12,Amit Tiwari,No issues found,low,51
+T06,signalling,0,2025-06-30,2025-05-30,Pooja Mishra,Signal relay damaged,high,-74
+T06,telecom,0,2025-10-23,2025-06-28,Gopal Krishna,Cable insulation worn,medium,41
+T07,rolling_stock,0,2025-07-24,2025-05-18,Vinod Kumar,Wheel alignment problem,high,-50
+T07,signalling,1,2026-01-03,2025-07-28,Shalini Gupta,Control systems updated,low,113
+T07,telecom,1,2025-10-07,2025-08-18,Raman Sharma,All frequencies clear,low,25
+T08,rolling_stock,1,2025-10-10,2025-07-15,Kiran Jain,Maintenance up to date,low,28
+T08,signalling,0,2025-08-25,2025-07-05,Ashok Yadav,Timer circuits aging,medium,-18
+T08,telecom,0,2025-09-28,2025-06-02,Rekha Sinha,Speaker system failure,high,16
+T09,rolling_stock,0,2025-09-01,2025-06-15,Dinesh Prasad,Hydraulic pressure low,medium,-11
+T09,signalling,1,2025-11-24,2025-08-28,Usha Bansal,Signal clarity excellent,low,73
+T09,telecom,1,2025-09-04,2025-07-22,Harish Chander,Data transmission stable,low,-8
+T10,rolling_stock,1,2025-10-27,2025-08-08,Satish Kohli,All components functional,low,45
+T10,signalling,0,2025-10-25,2025-06-10,Madhuri Bhatt,Junction box corroded,high,43
+T10,telecom,0,2025-09-30,2025-07-08,Naveen Arora,Backup power weak,medium,18
+T11,rolling_stock,0,2025-08-26,2025-05-25,Shyam Sunder,Coupling mechanism stuck,high,-17
+T11,signalling,1,2026-01-08,2025-08-01,Geeta Malhotra,LED indicators working,low,118
+T11,telecom,1,2025-11-08,2025-08-20,Yashpal Singh,Voice clarity good,low,57
+T12,rolling_stock,1,2025-12-23,2025-07-12,Lalita Devi,Routine inspection passed,low,102
+T12,signalling,0,2025-08-19,2025-06-30,Mohan Lal,Circuit breaker aging,medium,-24
+T12,telecom,0,2025-08-30,2025-05-20,Rashmi Kapoor,Handset not functional,high,-13
+T13,rolling_stock,0,2025-08-11,2025-06-25,Bharat Singh,Filter replacement needed,medium,-32
+T13,signalling,1,2026-01-20,2025-08-12,Sunita Sharma,Safety systems active,low,130
+T13,telecom,1,2025-11-13,2025-07-18,Pankaj Gupta,Network connectivity strong,low,62
+T14,rolling_stock,1,2025-11-29,2025-09-01,Jagdish Prasad,Excellent working condition,low,78
+T14,signalling,0,2025-07-21,2025-06-08,Anita Rani,Control panel malfunction,high,-53
+T14,telecom,0,2025-08-09,2025-07-02,Sunil Agarwal,Interference detected,medium,-34
+T15,rolling_stock,0,2025-09-24,2025-05-28,Vijay Kumar,Suspension system fault,high,12
+T15,signalling,1,2025-10-10,2025-07-20,Manju Devi,Signal strength optimal,low,28
+T15,telecom,1,2026-01-31,2025-08-25,Rajinder Kaur,Communication protocols updated,low,141
+T16,rolling_stock,1,2025-10-29,2025-07-08,Prakash Chandra,All safety checks passed,low,47
+T16,signalling,0,2025-10-21,2025-06-22,Nirmala Singh,Warning light dimming,medium,39
+T16,telecom,0,2025-10-02,2025-05-15,Rohit Sharma,Transmission line damaged,high,20
+T17,rolling_stock,0,2025-07-27,2025-06-20,Krishna Murthy,Lubrication system check,medium,-47
+T17,signalling,1,2025-10-11,2025-08-08,Sarita Jain,Track monitoring active,low,29
+T17,telecom,1,2025-11-15,2025-07-28,Ajay Tiwari,Digital systems upgraded,low,64
+T18,rolling_stock,1,2025-11-02,2025-08-15,Ramnika Kaur,Components in good shape,low,51
+T18,signalling,0,2025-10-23,2025-06-12,Brijesh Kumar,Signal timing error,high,41
+T18,telecom,0,2025-12-13,2025-07-05,Neelam Yadav,Cable wear observed,medium,92
+T19,rolling_stock,0,2025-06-22,2025-05-22,Ashish Goel,Door mechanism jammed,high,-82
+T19,signalling,1,2026-01-04,2025-07-25,Kamala Devi,Control room systems OK,low,114
+T19,telecom,1,2025-11-01,2025-08-10,Sudhir Bansal,Audio quality excellent,low,50
+T20,rolling_stock,1,2025-12-15,2025-08-02,Mahesh Agarwal,Preventive maintenance done,low,94
+T20,signalling,0,2025-07-31,2025-06-28,Renu Sharma,Power supply fluctuation,medium,-43
+T20,telecom,0,2025-08-16,2025-05-25,Tarun Gupta,Emergency communication down,high,-27
+T21,rolling_stock,0,2025-12-10,2025-06-18,Santosh Kumar,Electrical system aging,medium,89
+T21,signalling,1,2025-10-30,2025-08-18,Pushpa Rani,Automated systems functional,low,48
+T21,telecom,1,2025-08-27,2025-07-15,Vinay Prakash,Signal processing normal,low,-16
+T22,rolling_stock,1,2025-12-24,2025-08-22,Sanjay Mishra,Operational efficiency high,low,103
+T22,signalling,0,2025-08-31,2025-06-15,Bharti Singh,Junction failure detected,high,-12
+T22,telecom,0,2025-08-21,2025-07-08,Mukesh Yadav,Frequency drift noticed,medium,-22
+T23,rolling_stock,0,2025-08-07,2025-05-30,Arvind Sharma,Compressor malfunction,high,-36
+T23,signalling,1,2025-11-06,2025-07-18,Sudha Gupta,Block system operational,low,55
+T23,telecom,1,2026-01-15,2025-08-28,Nitin Agarwal,Voice transmission clear,low,125
+T24,rolling_stock,1,2025-10-02,2025-07-12,Ravi Shankar,All parameters normal,low,20
+T24,signalling,0,2025-08-17,2025-06-25,Meena Kumari,Relay contact oxidation,medium,-26
+T24,telecom,0,2025-10-20,2025-05-20,Deepak Kumar,Antenna system failure,high,38
+T25,rolling_stock,0,2025-09-09,2025-07-01,Harikesh Prasad,Brake lining replacement due,medium,-3
+T25,signalling,1,2025-10-16,2025-09-02,Kaushalya Devi,Safety interlocks working,low,34
+T25,telecom,1,2025-10-04,2025-07-22,Yogesh Singh,Data link stable,low,22

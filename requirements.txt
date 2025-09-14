@@ -1,5 +1,9 @@
 numpy
 pandas
 matplotlib
-sklearn
+scikit-learn
 xgboost
+seaborn
+pytest
+httpx
+fastapi[all]
