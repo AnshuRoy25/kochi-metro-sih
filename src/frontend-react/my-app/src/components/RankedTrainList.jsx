@@ -1,7 +1,7 @@
 // src/components/RankedTrainList.jsx
 import React, { useState } from 'react';
-import './RankedTrainList.css';  // Add this line
-import { generateRankedData } from '../data/rankedTrainsData';
+import './RankedTrainList.css';
+import { fetchRankedTrains } from '../api/rankedTrainsApi';
 
 const RankedTrainList = () => {
     // State for ranked trains functionality
@@ -20,7 +20,7 @@ const RankedTrainList = () => {
     const rankedEndIndex = rankedStartIndex + rankedItemsPerPage;
     const currentPageRanked = rankedTrains.slice(rankedStartIndex, rankedEndIndex);
 
-    // Ranking function
+    // Ranking function - now using API
     const rankTrains = async () => {
         if (isRanking) return;
 
@@ -29,7 +29,7 @@ const RankedTrainList = () => {
         setErrorMessage('');
 
         try {
-            const response = await generateRankedData(topK);
+            const response = await fetchRankedTrains(topK);
             
             if (response.success) {
                 setRankedTrains(response.data);
@@ -40,7 +40,7 @@ const RankedTrainList = () => {
                 // Auto-remove success message after 5 seconds
                 setTimeout(() => setSuccessMessage(''), 5000);
             } else {
-                setErrorMessage('Failed to rank trains. Please try again.');
+                setErrorMessage(response.message || 'Failed to rank trains. Please try again.');
                 setTimeout(() => setErrorMessage(''), 5000);
             }
         } catch (error) {
@@ -107,6 +107,7 @@ const RankedTrainList = () => {
                         className="filter-select ranking-select"
                         value={topK}
                         onChange={handleTopKChange}
+                        disabled={isRanking}
                     >
                         <option value="all">All Trains</option>
                         <option value="5">Top 5</option>

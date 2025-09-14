@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ..services import ranker
+from services import ranker
 
 router = APIRouter()
 

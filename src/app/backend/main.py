@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import trains, ranking, explanation
+from routers import trains, ranking, explanation
 
 app = FastAPI(
     title="Kochi Metro Train Induction API",

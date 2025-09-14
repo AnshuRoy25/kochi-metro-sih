@@ -1,26 +1,31 @@
-train_id,fitness_certificate_status,job_card_status,branding_priority,mileage,cleaning_slot_available,stabling_bay
-T01,OK,Closed,High,12500,Yes,B01
-T02,OK,Closed,Low,8500,Yes,B02
-T03,Expired,Open,Medium,15000,No,IBL
-T04,OK,Open,High,9200,Yes,IBL
-T05,Warning,Closed,Low,21000,Yes,B03
-T06,OK,Closed,Medium,11500,Yes,B04
-T07,OK,Closed,High,5500,Yes,B05
-T08,OK,Closed,Low,35000,Yes,B06
-T09,Warning,Open,Medium,42000,No,IBL
-T10,OK,Closed,Medium,23000,Yes,B07
-T11,OK,Closed,Low,18700,Yes,B08
-T12,OK,Closed,High,14200,Yes,B09
-T13,OK,Closed,Medium,29500,Yes,B10
-T14,Expired,Open,Low,51000,No,IBL
-T15,OK,Closed,High,9800,Yes,B11
-T16,OK,Closed,Low,31000,Yes,B12
-T17,OK,Closed,Medium,22500,Yes,B13
-T18,Warning,Closed,High,48000,Yes,B14
-T19,OK,Closed,Low,17000,Yes,B15
-T20,OK,Closed,Medium,33000,Yes,B16
-T21,OK,Closed,High,11200,Yes,B17
-T22,OK,Closed,Low,26500,Yes,B18
-T23,OK,Open,Medium,19800,No,IBL
-T24,OK,Closed,Medium,41000,Yes,B19
-T25,OK,Closed,High,6200,Yes,B20
+train_id,train_name,depot,status,priority_level,last_maintenance_time,fitness_certificate_status,job_card_status,branding_priority,mileage,cleaning_slot_available,stabling_bay
+TR001,Express Lightning,Central Depot,Ready,High,2025-09-10,OK,Closed,High,12500,Yes,B01
+TR002,Freight Master,South Depot,Standby,Medium,2025-09-08,OK,Closed,Low,8500,Yes,B02
+TR003,Regional Runner,North Depot,Maintenance,High,2025-09-13,Expired,Open,Medium,15000,No,IBL
+TR004,City Express,East Depot,Ready,High,2025-09-09,OK,Open,High,9200,Yes,IBL
+TR005,Local Shuttle,West Depot,Unavailable,Low,2025-09-05,Warning,Closed,Low,21000,Yes,B03
+TR006,Cargo Chief,Central Depot,Ready,Medium,2025-09-11,OK,Closed,Medium,11500,Yes,B04
+TR007,Metro Express,South Depot,Ready,High,2025-09-12,OK,Closed,High,5500,Yes,B05
+TR008,Local Transit,North Depot,Maintenance,Low,2025-09-13,OK,Closed,Low,35000,Yes,B06
+TR009,Speed Demon,East Depot,Ready,High,2025-09-07,Warning,Open,Medium,42000,No,IBL
+TR010,Heavy Hauler,West Depot,Standby,Medium,2025-09-06,OK,Closed,Medium,23000,Yes,B07
+TR011,Regional Star,Central Depot,Ready,Medium,2025-09-10,OK,Closed,Low,18700,Yes,B08
+TR012,City Loop,South Depot,Ready,Low,2025-09-11,OK,Closed,High,14200,Yes,B09
+TR013,Super Express,North Depot,Maintenance,High,2025-09-13,OK,Closed,Medium,29500,Yes,B10
+TR014,Freight Express,East Depot,Ready,Medium,2025-09-09,Expired,Open,Low,51000,No,IBL
+TR015,Metro Star,West Depot,Ready,High,2025-09-08,OK,Closed,High,9800,Yes,B11
+TR016,Local Express,Central Depot,Unavailable,Low,2025-09-04,OK,Closed,Low,31000,Yes,B12
+TR017,Regional Express,South Depot,Ready,High,2025-09-12,OK,Closed,Medium,22500,Yes,B13
+TR018,Cargo Express,North Depot,Ready,Medium,2025-09-07,Warning,Closed,High,48000,Yes,B14
+TR019,City Runner,East Depot,Maintenance,Medium,2025-09-13,OK,Closed,Low,17000,Yes,B15
+TR020,Regional Shuttle,West Depot,Standby,Low,2025-09-10,OK,Closed,Medium,33000,Yes,B16
+TR021,Metro Lightning,Central Depot,Ready,High,2025-09-09,OK,Closed,High,11200,Yes,B17
+TR022,Heavy Express,South Depot,Unavailable,Medium,2025-09-05,OK,Closed,Low,26500,Yes,B18
+TR023,Regional Lightning,North Depot,Ready,Medium,2025-09-11,OK,Open,Medium,19800,No,IBL
+TR024,Local Runner,East Depot,Ready,Low,2025-09-12,OK,Closed,Medium,41000,Yes,B19
+TR025,Express Runner,West Depot,Maintenance,High,2025-09-13,OK,Closed,High,6200,Yes,B20
+TR026,Cargo Star,Central Depot,Ready,Medium,2025-09-08,OK,Closed,Medium,28500,Yes,B21
+TR027,Metro Runner,South Depot,Ready,High,2025-09-10,OK,Closed,High,13200,Yes,B22
+TR028,Shuttle Express,North Depot,Standby,Low,2025-09-06,OK,Closed,Low,34800,Yes,B23
+TR029,Express Star,East Depot,Ready,High,2025-09-11,OK,Closed,High,7500,Yes,B24
+TR030,Heavy Star,West Depot,Ready,Medium,2025-09-07,OK,Closed,Medium,25600,Yes,B25

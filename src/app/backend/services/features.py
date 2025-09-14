@@ -21,3 +21,18 @@ def get_train_features(train_id: str):
         return train_data.iloc[0].to_dict()
     except FileNotFoundError:
         raise HTTPException(status_code=500, detail="Mock data file not found")
+
+# NEW FUNCTION - Add this
+def get_all_trains():
+    """
+    Loads and returns all trains data for the train list.
+    """
+    try:
+        df = pd.read_csv(DATA_PATH)
+        
+        # Convert DataFrame to list of dictionaries
+        trains_list = df.to_dict('records')
+        
+        return trains_list
+    except FileNotFoundError:
+        raise HTTPException(status_code=500, detail="Mock data file not found")

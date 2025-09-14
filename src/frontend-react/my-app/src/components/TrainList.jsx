@@ -1,7 +1,7 @@
 // src/components/TrainList.jsx
-import React, { useState } from 'react';
-import './TrainList.css';  // Add this line
-import { trainsData } from '../data/trainsData';
+import React, { useState, useEffect } from 'react';
+import './TrainList.css';
+import { fetchAllTrains } from '../api/trainListApi';
 
 const TrainList = () => {
     // State for filtering and pagination
@@ -11,9 +11,32 @@ const TrainList = () => {
     const [depotFilter, setDepotFilter] = useState('');
     const [statusFilter, setStatusFilter] = useState('');
     const [priorityFilter, setPriorityFilter] = useState('');
+    
+    // State for API data
+    const [allTrains, setAllTrains] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
-    // All trains data
-    const [allTrains] = useState([...trainsData]);
+    // Fetch trains data when component mounts
+    useEffect(() => {
+        const loadTrains = async () => {
+            setLoading(true);
+            setError('');
+            
+            const response = await fetchAllTrains();
+            
+            if (response.success) {
+                setAllTrains(response.data);
+            } else {
+                setError(response.message);
+                setAllTrains([]);
+            }
+            
+            setLoading(false);
+        };
+
+        loadTrains();
+    }, []);
 
     // Filter trains based on current filters
     const getFilteredTrains = () => {
@@ -111,6 +134,43 @@ const TrainList = () => {
         const options = { year: 'numeric', month: 'short', day: 'numeric' };
         return date.toLocaleDateString('en-US', options);
     };
+
+    // Loading state
+    if (loading) {
+        return (
+            <section className="train-list-section">
+                <div className="section-header">
+                    <h2><strong>Train List</strong></h2>
+                    <div className="results-info">
+                        <span>Loading trains...</span>
+                    </div>
+                </div>
+                <div className="table-container">
+                    <div style={{padding: '60px', textAlign: 'center', color: '#666'}}>
+                        <div style={{fontSize: '1.2rem', marginBottom: '10px'}}>Loading trains data...</div>
+                        <div style={{fontSize: '0.9rem', fontStyle: 'italic'}}>Please wait while we fetch the latest information</div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
+    // Error state
+    if (error) {
+        return (
+            <section className="train-list-section">
+                <div className="section-header">
+                    <h2><strong>Train List</strong></h2>
+                    <div className="results-info">
+                        <span>Error loading trains</span>
+                    </div>
+                </div>
+                <div className="error-message">
+                    Failed to load trains: {error}
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section className="train-list-section">
